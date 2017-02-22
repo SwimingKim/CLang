@@ -47,6 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Ball.cs" />
      <Compile Include="Assets\CameraWalk.cs" />
+     <Compile Include="Assets\Coin.cs" />
+     <Compile Include="Assets\FailZone.cs" />
      <Compile Include="Assets\Ground.cs" />
      <Compile Include="Assets\LogicalOperator.cs" />
      <Compile Include="Assets\Obstacle.cs" />

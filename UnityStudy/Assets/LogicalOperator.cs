@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LogicalOperator : MonoBehaviour {
+public class LogicalOperator : MonoBehaviour
+{
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 
 		int age = 19;
-		if (age < 20 || age>=65) {
+		if (age < 20 || age >= 65) {
 			Debug.Log ("할인대상입니다");
 		} 
 
@@ -17,7 +19,8 @@ public class LogicalOperator : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 	
 	}
 }

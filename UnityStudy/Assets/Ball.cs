@@ -52,9 +52,9 @@ public class Ball : MonoBehaviour
 
 //		myCollider.radius += .01f;
 
-		if(Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.Space)) {
 			Debug.Log ("pressed");
-			GetComponent<Rigidbody> ().AddForce (Vector3.up*300);
+			GetComponent<Rigidbody> ().AddForce (Vector3.up * 300);
 		}
 	}
 
