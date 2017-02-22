@@ -6,7 +6,7 @@ public class Obstacle : MonoBehaviour
 	// 양 가운데에 향하면 위치 바꾸기
 	// 글로벌이 아닌 로컬변수 따라가기
 	// 거리계산 메소드를 만들어서 활용하기
-	// collision 충돌
+	// collision 충돌시 튕겨내는 힘
 
 	void TestMethod (string name)
 	{
@@ -24,7 +24,7 @@ public class Obstacle : MonoBehaviour
 		collision.gameObject.GetComponent<Rigidbody> ().AddForce (direction);
 	}
 
-	float delta = -0f;
+	float delta = -0.1f;
 	// Use this for initialization
 	void Start ()
 	{

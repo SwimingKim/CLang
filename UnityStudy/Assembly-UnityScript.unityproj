@@ -6,10 +6,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3AD5D737-BB46-43C5-6011-5F44AA481467}</ProjectGuid>
+    <ProjectGuid>{2FF90A42-DE07-04AB-6B66-93CA014E5089}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-UnityScript</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -45,16 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ArrayTest.cs" />
-     <Compile Include="Assets\Ball.cs" />
-     <Compile Include="Assets\CameraWalk.cs" />
-     <Compile Include="Assets\Coin.cs" />
-     <Compile Include="Assets\FailZone.cs" />
-     <Compile Include="Assets\GameManager.cs" />
-     <Compile Include="Assets\Ground.cs" />
-     <Compile Include="Assets\LogicalOperator.cs" />
-     <Compile Include="Assets\Obstacle.cs" />
-     <Compile Include="Assets\RedCoin.cs" />
+     <Compile Include="Assets\ewBehaviourScript.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
