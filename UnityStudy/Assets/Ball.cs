@@ -3,6 +3,12 @@ using System.Collections;
 
 public class Ball : MonoBehaviour
 {
+	// start, update 로그로 찍기
+	// 메소드 만들어서 실행해보기
+	// 움직이는 거리 측정해보기
+	// 콜라이더 값 변경
+	// 스페이스바 누르면 점프
+
 	int count = 1;
 	float startingPoint;
 	bool shouldPrintOver20 = true;
@@ -14,6 +20,7 @@ public class Ball : MonoBehaviour
 	{
 		Debug.Log ("Start");
 		TestMethod ();
+
 		startingPoint = transform.position.z;
 
 		Rigidbody myRigidbody = GetComponent<Rigidbody> ();
@@ -21,11 +28,10 @@ public class Ball : MonoBehaviour
 
 		myCollider = GetComponent<SphereCollider> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
-//		int localCount = 0;
 //		Debug.Log ("Update " + count);
 		count += 1;
 
@@ -42,7 +48,7 @@ public class Ball : MonoBehaviour
 				Debug.Log ("Over 20: " + distance);
 				shouldPrintOver20 = false;
 			}
-		} 
+		}
 
 //		myCollider.radius += .01f;
 

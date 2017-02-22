@@ -2,12 +2,14 @@
 using System.Collections;
 
 public class Ground : MonoBehaviour {
+// 화살표를 누르면 각도 회전
+// 왼쪽과 오른쪽을 클릭하면 각도 회전
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		float zRotation = transform.localEulerAngles.z;
