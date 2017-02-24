@@ -55,6 +55,8 @@
      <Compile Include="Assets\LogicalOperator.cs" />
      <Compile Include="Assets\Obstacle.cs" />
      <Compile Include="Assets\RedCoin.cs" />
+     <Compile Include="Assets\Shooter.cs" />
+     <Compile Include="Assets\Stone.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

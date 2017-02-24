@@ -27,6 +27,8 @@ public class Ball : MonoBehaviour
 		Debug.Log ("UseGravity?:" + myRigidbody.useGravity);
 
 		myCollider = GetComponent<SphereCollider> ();
+
+//		Debug.Log ("일련번호 : " + GetInstanceID());
 	}
 
 	// Update is called once per frame
@@ -53,8 +55,13 @@ public class Ball : MonoBehaviour
 //		myCollider.radius += .01f;
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			Debug.Log ("pressed");
-			GetComponent<Rigidbody> ().AddForce (Vector3.up * 300);
+//			Debug.Log ("pressed");
+//			GetComponent<Rigidbody> ().AddForce (Vector3.up * 300);
+			Rigidbody ballRigid;
+			ballRigid = gameObject.GetComponent<Rigidbody> ();
+			ballRigid.AddForce (Vector3.up * 300);
+
+			Debug.Log (ballRigid.mass);
 		}
 	}
 

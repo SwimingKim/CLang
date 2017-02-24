@@ -31,7 +31,7 @@ public class Obstacle : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update ()
+	protected void Update ()
 	{
 //		transform.position = new Vector3 (1,1,1);
 		float newXPosition = transform.localPosition.x + delta;
