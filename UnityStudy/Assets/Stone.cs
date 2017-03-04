@@ -25,7 +25,7 @@ public class Stone : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		transform.position = Vector3.MoveTowards (transform.position, target, 0.1f);
+		transform.localPosition = Vector3.MoveTowards (transform.localPosition, target, 0.1f);
 		transform.Rotate (new Vector3 (0, 0, 5));
 	}
 }
