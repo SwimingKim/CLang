@@ -1,0 +1,16 @@
+/Users/suyoung/Projects/Fireworks/Fireworks/bin/iPhoneSimulator/Debug/Fireworks.exe
+/Users/suyoung/Projects/Fireworks/Fireworks/bin/iPhoneSimulator/Debug/Fireworks.exe.mdb
+/Users/suyoung/Projects/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/suyoung/Projects/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Users/suyoung/Projects/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/suyoung/Projects/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/optimized/
+/Users/suyoung/Projects/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/Fireworks.exe
+/Users/suyoung/Projects/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/Fireworks.exe.mdb
+/Users/suyoung/Documents/Dev/Xamarin/Fireworks/Fireworks/bin/iPhoneSimulator/Debug/Fireworks.exe
+/Users/suyoung/Documents/Dev/Xamarin/Fireworks/Fireworks/bin/iPhoneSimulator/Debug/Fireworks.exe.mdb
+/Users/suyoung/Documents/Dev/Xamarin/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/suyoung/Documents/Dev/Xamarin/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Users/suyoung/Documents/Dev/Xamarin/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/suyoung/Documents/Dev/Xamarin/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/optimized/
+/Users/suyoung/Documents/Dev/Xamarin/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/Fireworks.exe
+/Users/suyoung/Documents/Dev/Xamarin/Fireworks/Fireworks/obj/iPhoneSimulator/Debug/Fireworks.exe.mdb
