@@ -5,32 +5,34 @@
 2. C++  
 
   - 기본 형태  
-  #include <iostream>  
+>  \#include <iostream>  
   using namespace std;  
-
   int main()  
   {  
-      return 0;  
+    return 0;  
   }
 
   - 조건문  
-  if (condition)  
+>  if (condition)  
   {  
   }
-  switch (key)  
+
+>  switch (key)  
  {  
       case value:
           break;
  }  
 
   - 반복문  
-  for (int i=0; i < length)  
+>  for (int i=0; i < length)  
   {  
   }
-  while (condition)  
+
+>  while (condition)  
   {  
   }  
-  do  
+
+>  do  
   {  
   } while (condition)
 
