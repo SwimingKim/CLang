@@ -104,6 +104,16 @@ a = b;
 cout << "&rA = " << &rA << " &a = " << &a << "\n";
 ```
 
+- 배열
+
+```
+int list[5] = {1,2,3,4,5};
+char str[6] = "Hello";
+cout << str; // Hello
+char* pstr = "World";
+cout << pstr; // World;
+```
+
 
 
 3. C# for Unity  
