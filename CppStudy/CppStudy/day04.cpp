@@ -18,6 +18,25 @@ const int num = 5;
 double avg(int t[]);
 double pavg(int* pt);
 
+int count(char str[], char ch)
+{
+	int i = 0;
+	int c = 0;
+	while (str[i])
+	{
+		if (str[i] == ch)
+		{
+			c++;
+		}
+		i++;
+	}
+	return c;
+}
+
+int sa = 0; // 전역 변수
+
+void func();
+
 int main()
 {
 	// 포인터
@@ -170,9 +189,97 @@ int main()
 	cout << "*pstr = " << *pstr << "\n";
 	cout << "&pstr = " << &pstr << "\n";
 
+	/*
 	cout << "이름음 입력하세요.\n";
 	cin >> str;
 	cout << str << "\n";
+	*/
+	/*
+	for (int i=0; str[i] != '\0'; i++)
+	{
+		cout << str[i] << "*";
+	}
+	*/
+
+	/*
+	char mstr[100];
+	cout << "문자열(영문자 및 숫자)를 입력하세요. 공백은 입력하지 마세요.\n";
+	cin >> mstr;
+	cout << "입력한 문자열의 길이는 " << strlen(mstr) << "입니다.\n";
+	*/
+
+	char str0[20];
+	char str1[10];
+	char str2[10];
+
+	strcpy_s(str1, "Hello");
+	strcpy_s(str2, "GoodBye");
+	strcpy_s(str0, str1);
+	strcat_s(str0, str2);
+
+	cout << "배열 str1은 " << str1 << "입니다.\n";
+	cout << "배열 str2는 " << str2 << "입니다.\n";
+	cout << "연결하면 " << str0 << "입니다.\n";
+
+	char search[100];
+	char ch;
+
+	/*
+	cout << "문자열을 입력하세요.\n";
+	cin >> search;
+	cout << "검색할 문자를 입력하세요.\n";
+	cin >> ch;
+
+	int c = count(search, ch);
+	cout << search << " 안에 " << ch << " " << c << "개가 있습니다.\n";
+	*/
+
+	int nb = 1; // 지역변수
+
+	cout << "메인 함수에서 변수 a와 b를 사용할 수 있습니다.\n";
+	cout << "변수 a의 값은 " << a << "입니다.\n";
+	cout << "변수 b의 값은 " << nb << "입니다.\n";
+
+	func();
+
+	for (int i=0; i < 5; i++)
+	{
+		func();
+		cout << sa*2 - 1 << "\n";
+		sa++;
+	}
+
+	int* pA1;
+	pA1 = new int;
+
+	cout << "동적으로 메모리를 확보했습니다.\n";
+	*pA1 = 10;
+	cout << "*pA = " << *pA1 << "\n";
+
+	delete pA1;
+	cout << "확보한 메모리를 해제했습니다.\n";
+
+	int mnum;
+	int* pA2;
+
+	cout << "학생 몇 명의 점수를 입력하시겠습니까?\n";
+	cin >> mnum;
+
+	pA2 = new int[mnum];
+	cout << mnum << "명 분의 점수를 입력하세요.\n";
+
+	for (int i = 0; i < mnum; i++)
+	{
+		cin >> pA2[i];
+	}
+
+	for (int i = 0; i < mnum; i++)
+	{
+		cout << i + 1 << "번째 학생의 점수는 " << pA2[i] << "입니다.\n";
+	}
+
+	delete[] pA2;
+	cout << "확보한 메모리를 해제했습니다.\n";
 
 	return 0;
 
@@ -201,4 +308,19 @@ double pavg(int* pt)
 
 	return sum / num;
 
+}
+
+void func()
+{
+	//지정한다 == 지역 변수
+	static int na = 0; // 정적 변수(전역 변수의 속성이지만 static를 활용하면 정적인 속성을 갖는다)
+	int sb = 2; // 지역 변수
+
+	/*
+	cout << "func 함수에서 변수 a와 c를 사용할 수 있습니다.\n";
+	cout << "변수 a의 값은 " << a << "입니다.\n";
+	cout << "변수 c의 값은 " << c << "입니다.\n";
+	*/
+	cout << "a = " << sa << " b = " << sb <<  "\n";
+	sa++; sb++;
 }
