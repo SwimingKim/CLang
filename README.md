@@ -114,7 +114,52 @@ char* pstr = "World";
 cout << pstr; // World;
 ```
 
+- 열거체, 구조체, 공용체
 
+```
+enum Week = {SUN, MON, TUE, WED, THU, FRI, SAT, SUN};
+
+struct Car
+{
+  string color;
+  int gas;
+};
+
+union Markdet
+{
+  int buy;
+  int sell;
+};
+```
+
+- 클래스
+
+```
+class Car
+{
+  private:
+    string color;
+    int gas;
+  public :
+    Car()
+    string getColor() { return color };
+    int getGas() { return gas };
+    void setColorGas(string c, int g);
+};
+
+Car::Car()
+{
+  color = '검정';
+  gas = 10000;
+  cout << "자동차 제조\n";
+}
+
+void Car::setColorGas(string c, int g)
+{
+  color = c;
+  gas = g;
+};
+```
 
 3. C# for Unity  
 4. C# for Xamarine
