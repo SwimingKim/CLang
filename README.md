@@ -1,8 +1,19 @@
 # C계열 언어 공부  
 
 
-1. C  
-2. C++  
+(1) C  
+
+
+- 기본형태
+
+```
+#include <stdio.h>
+main()
+{
+}
+```
+
+(2) C++  
 
 
   - 기본 형태  
@@ -161,5 +172,5 @@ void Car::setColorGas(string c, int g)
 };
 ```
 
-3. C# for Unity  
-4. C# for Xamarine
+(3) C# for Unity  
+(4) C# for Xamarine
