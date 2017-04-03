@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{6D0CECDA-988A-46D5-97D0-9ACD17B1E110}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Csharp/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Csharp 상태">
     <Files>
-      <File FileName="Csharp/Program.cs" Line="9" Column="12" />
+      <File FileName="Csharp/Program.cs" Line="21" Column="17" />
+      <File FileName="Csharp 상태" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
