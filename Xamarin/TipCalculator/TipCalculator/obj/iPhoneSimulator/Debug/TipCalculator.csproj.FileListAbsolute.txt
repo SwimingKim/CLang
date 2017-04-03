@@ -14,3 +14,11 @@
 /Users/suyoung/Documents/Dev/Xamarin/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/optimized/
 /Users/suyoung/Documents/Dev/Xamarin/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/TipCalculator.exe
 /Users/suyoung/Documents/Dev/Xamarin/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/TipCalculator.exe.mdb
+/Volumes/SD CARD/Git/Csharp/Xamarin/TipCalculator/TipCalculator/bin/iPhoneSimulator/Debug/TipCalculator.exe
+/Volumes/SD CARD/Git/Csharp/Xamarin/TipCalculator/TipCalculator/bin/iPhoneSimulator/Debug/TipCalculator.exe.mdb
+/Volumes/SD CARD/Git/Csharp/Xamarin/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Volumes/SD CARD/Git/Csharp/Xamarin/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Volumes/SD CARD/Git/Csharp/Xamarin/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Volumes/SD CARD/Git/Csharp/Xamarin/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/optimized/
+/Volumes/SD CARD/Git/Csharp/Xamarin/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/TipCalculator.exe
+/Volumes/SD CARD/Git/Csharp/Xamarin/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/TipCalculator.exe.mdb
