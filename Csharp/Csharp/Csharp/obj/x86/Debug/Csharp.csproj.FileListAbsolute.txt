@@ -1,0 +1,4 @@
+/Volumes/SD CARD/Csharp/Csharp/Csharp/bin/Debug/Csharp.exe
+/Volumes/SD CARD/Csharp/Csharp/Csharp/bin/Debug/Csharp.exe.mdb
+/Volumes/SD CARD/Csharp/Csharp/Csharp/obj/x86/Debug/Csharp.exe
+/Volumes/SD CARD/Csharp/Csharp/Csharp/obj/x86/Debug/Csharp.exe.mdb
