@@ -1,1 +1,12 @@
-﻿<Properties StartupItem="Csharp/Csharp.csproj" />
+﻿<Properties StartupItem="Csharp/Csharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Csharp/second.cs">
+    <Files>
+      <File FileName="Csharp/second.cs" Line="377" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
