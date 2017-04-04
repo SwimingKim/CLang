@@ -2,11 +2,11 @@
 
 namespace Csharp
 {
-	class Program
+	public class first
 	{
 		public static void Main(string[] args)
 		{
-			
+
 			Console.Write("Hello");
 			Console.WriteLine("World..!");
 			// 나머지 연산의 부호는 좌항에 달려 있다
@@ -109,8 +109,8 @@ namespace Csharp
 
 			Console.WriteLine(bool.Parse("true"));
 			Console.WriteLine(bool.Parse("false"));
-			
 
 		}
 	}
 }
+
