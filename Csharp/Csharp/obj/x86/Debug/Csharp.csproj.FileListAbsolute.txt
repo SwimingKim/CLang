@@ -1,0 +1,5 @@
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/obj/x86/Debug/Csharp.csproj.CoreCompileInputs.cache
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/obj/x86/Debug/Csharp.exe
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/obj/x86/Debug/Csharp.pdb
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/bin/Debug/Csharp.exe
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/bin/Debug/Csharp.pdb

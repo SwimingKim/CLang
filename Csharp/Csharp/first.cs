@@ -18,7 +18,7 @@ namespace Csharp
 			Console.WriteLine(true);
 			Console.WriteLine(DateTime.Now.Hour < 3 || 8 < DateTime.Now.Hour);
 
-			int a = 273; 
+			int a = 273;
 			long b = 52;
 			Console.WriteLine(a+b);
 			Console.WriteLine(a-b);
@@ -77,7 +77,7 @@ namespace Csharp
 
 			// var형 변수는 선언과 동시에 초기화해야 함
 			// var형 변수는 지역 변수
-			var mynum = 100; 
+			var mynum = 100;
 			Console.WriteLine(mynum.GetType());
 
 			/*
@@ -113,4 +113,3 @@ namespace Csharp
 		}
 	}
 }
-

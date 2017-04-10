@@ -3,3 +3,10 @@
 /root/문서/Dev/CLang/Csharp/Csharp/bin/Debug/Csharp.exe
 /root/문서/Dev/CLang/Csharp/Csharp/obj/x86/Debug/Csharp.exe
 /root/문서/Dev/CLang/Csharp/Csharp/obj/x86/Debug/Csharp.exe.mdb
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/bin/Debug/Csharp.exe.mdb
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/bin/Debug/Csharp.pdb
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/bin/Debug/Csharp.exe
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/obj/x86/Debug/Csharp.exe
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/obj/x86/Debug/Csharp.exe.mdb
+/Volumes/SD CARD/Git/CLang/Csharp/Csharp/obj/x86/Debug/Csharp.pdb
