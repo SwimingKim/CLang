@@ -112,11 +112,11 @@ namespace Csharp
 				// });
 			}
 
-			public void Print(PrintProcess process)
+			public void Print(PrintProcess process) // process : 콜백함수
 			{
 				foreach (var item in listOfStudent)
 				{
-					process(item);
+					process(item); // 콜백함수에 매개변수를 전달(연결)하여 호출
 				}
 			}
 

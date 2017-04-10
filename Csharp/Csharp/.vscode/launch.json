@@ -6,12 +6,11 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            // "program": "${workspaceRoot}/SecondProgram/bin/Debug/netcoreapp1.0/SecondProgram.dll",
-            "program": "${workspaceRoot}/Csharp/Csharp/bin/Debug/<target-framework>/<project-name.dll>",
+            "program": "${workspaceRoot}/bin/Debug/<target-framework>/<project-name.dll>",
             "args": [],
-            "cwd": "${workspaceRoot}/Csharp",
+            "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
-            "externalConsole": false
+            "console": "internalConsole"
         },
         {
             "name": ".NET Core Launch (web)",

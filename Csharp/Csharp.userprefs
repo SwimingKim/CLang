@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{F043C458-07DF-4239-ABDF-0C2EBC11B0CE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Csharp/sixth.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Csharp/sixth_forth.cs">
     <Files>
-      <File FileName="Csharp/sixth.cs" Line="192" Column="1" />
+      <File FileName="Csharp/sixth_forth.cs" Line="12" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
