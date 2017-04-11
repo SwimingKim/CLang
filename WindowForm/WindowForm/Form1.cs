@@ -12,9 +12,18 @@ namespace WindowForm
 {
     public partial class Form1 : Form
     {
+        class CustomForm : Form
+        {
+            public CustomForm()
+            {
+                Text = "제목 글자";
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
+            IsMdiContainer = true;
             /*
             myButton.Text = "코드에서 변경";
             myButton.Width = 100;
@@ -41,8 +50,6 @@ namespace WindowForm
             {
                 result = MessageBox.Show("내용", "제목", MessageBoxButtons.RetryCancel);
             } while (result == DialogResult.Retry);
-
-
         }
     
         private void Custom_Click(object sender, EventArgs e)
@@ -66,6 +73,14 @@ namespace WindowForm
             elaspedTimer++;
             textBox1.Text = elaspedTimer%60 + "초 경과";
             label1.Text = (elaspedTimer/60) + "분 경과";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            CustomForm formA = new CustomForm();
+            formA.MdiParent = this; // 모달에서는 MDI사용불가
+            formA.Show(); // 모달리스(Modeless) 
+            //formA.ShowDialog(); // 모달(Modal)
         }
     }
 }
