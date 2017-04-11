@@ -16,3 +16,12 @@ E:\Git\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.Properties.Resources.res
 E:\Git\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.csproj.GenerateResource.Cache
 E:\Git\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.exe
 E:\Git\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.pdb
+C:\Users\SuYoung\Documents\Dev\CLang\WindowForm\WindowForm\bin\Debug\WindowForm.exe.config
+C:\Users\SuYoung\Documents\Dev\CLang\WindowForm\WindowForm\bin\Debug\WindowForm.exe
+C:\Users\SuYoung\Documents\Dev\CLang\WindowForm\WindowForm\bin\Debug\WindowForm.pdb
+C:\Users\SuYoung\Documents\Dev\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.csprojResolveAssemblyReference.cache
+C:\Users\SuYoung\Documents\Dev\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.Properties.Resources.resources
+C:\Users\SuYoung\Documents\Dev\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.csproj.GenerateResource.Cache
+C:\Users\SuYoung\Documents\Dev\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.exe
+C:\Users\SuYoung\Documents\Dev\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.pdb
+C:\Users\SuYoung\Documents\Dev\CLang\WindowForm\WindowForm\obj\Debug\WindowForm.Form1.resources

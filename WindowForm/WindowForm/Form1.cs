@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace WindowForm
 {
-    public partial class Form1 : Form
+    public partial class Form1 : System.Windows.Forms.Form
     {
+        class CustomForm : Form
+        {
+            public CustomForm()
+            {
+                Text = "제목글자";
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
+            IsMdiContainer = true;
+
             /*
             myButton.Text = "코드에서 변경";
             myButton.Width = 100;
@@ -33,14 +43,6 @@ namespace WindowForm
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            MessageBox.Show("내용");
-            MessageBox.Show("내용", "제목");
-            //MessageBox.Show("내용", "제목", MessageBoxButtons.RetryCancel);
-            DialogResult result;
-            do
-            {
-                result = MessageBox.Show("내용", "제목", MessageBoxButtons.RetryCancel);
-            } while (result == DialogResult.Retry);
 
 
         }
@@ -66,6 +68,26 @@ namespace WindowForm
             elaspedTimer++;
             textBox1.Text = elaspedTimer%60 + "초 경과";
             label1.Text = (elaspedTimer/60) + "분 경과";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            CustomForm form = new CustomForm();
+            form.MdiParent = this;
+            form.Show();
+            //form.ShowDialog(); // 모달 타입
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("내용");
+            MessageBox.Show("내용", "제목");
+            //MessageBox.Show("내용", "제목", MessageBoxButtons.RetryCancel);
+            DialogResult result;
+            do
+            {
+                result = MessageBox.Show("내용", "제목", MessageBoxButtons.RetryCancel);
+            } while (result == DialogResult.Retry);
         }
     }
 }
