@@ -1,5 +1,1 @@
-﻿  day05.cpp
-c:\users\suyoung\documents\dev\clang\cppstudy\cppstudy\day05.cpp(35): error C2504: 'Vehicle': 기본 클래스를 정의하지 않았습니다.
-c:\users\suyoung\documents\dev\clang\cppstudy\cppstudy\day05.cpp(122): error C2499: 'RacingCar': 클래스는 자체 기본 클래스일 수 없습니다.
-c:\users\suyoung\documents\dev\clang\cppstudy\cppstudy\day05.cpp(232): error C2440: '=': 'Carcls *'에서 'Vehicle *'(으)로 변환할 수 없습니다.
-  c:\users\suyoung\documents\dev\clang\cppstudy\cppstudy\day05.cpp(232): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+﻿
