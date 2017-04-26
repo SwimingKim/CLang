@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CObjectGenerator : MonoBehaviour {
 
+    // 위치를 고정할 것인지 변동할 것인지 확인
     public enum POSY_TYPE {
         FIXED, VARIABLE
     }
@@ -19,11 +20,6 @@ public class CObjectGenerator : MonoBehaviour {
     void Start () {
         InvokeRepeating("CreateObject", _createStartTime, _createDelayTime);
     }
-	
-	// Update is called once per frame
-	void Update () {
-
-    }
 
 	void CreateObject()
 	{
@@ -34,7 +30,5 @@ public class CObjectGenerator : MonoBehaviour {
         Instantiate(_objectPrefab[rand], createPos, Quaternion.identity);
 
     }
-
-
 
 }

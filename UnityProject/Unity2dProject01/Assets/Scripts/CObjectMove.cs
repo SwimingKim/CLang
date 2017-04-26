@@ -9,15 +9,14 @@ public class CObjectMove : MonoBehaviour {
     public Vector2 _direction;
 
     // Use this for initialization
-    void Start () {
-
+    protected virtual void Start () {
         _rigidbody.velocity = _direction.normalized * _speed;
-
     }
 	
 	// Update is called once per frame
-	void Update () {
+	protected virtual void Update () {
 
+        // 화면에서 밀리면 삭제
         if (transform.position.x < -18)
         {
             Destroy(gameObject);

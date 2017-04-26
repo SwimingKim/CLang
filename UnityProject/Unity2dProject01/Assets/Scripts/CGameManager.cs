@@ -24,10 +24,10 @@ public class CGameManager : MonoBehaviour {
     }
 
 	int pos = 0;
-    string[] gameDescription = { "우리 토끼는 하늘을 날 수 있어요", "산토끼의 반대말은 뭘까요??", "스페이스를 누르면 점프를 한답니다", "토끼를 움직이려면 키보드를 이용하세요", "버블이 있으면 8초간 무적상태가 돼요" };
+    string[] gameDescription = { "우리 토끼는 하늘을 날 수 있어요", "산토끼의 반대말은 뭘까요??", "컨트롤키를 누르면 공격할 수 있어요", "토끼를 움직이려면 키보드를 이용하세요", "버블이 있으면 8초간 무적상태가 돼요" };
     void GameStart()
     {
-        // splash
+        // start
 		if (_gameTime <= 0)
 		{
             CancelInvoke("GameStart");
@@ -37,6 +37,7 @@ public class CGameManager : MonoBehaviour {
             _bestText.text = bestCount.ToString();
             _carrotText.text = carrot.ToString();
 
+            // 스플래스 UI 안보이게 만들기
             _rabitPrefab.SetActive(true);
             for (int i = _gameElement.Length-1; i >= 0; i--)
             {
@@ -44,13 +45,14 @@ public class CGameManager : MonoBehaviour {
             }
 
         }
-        // start
+        // splash
 		else
 		{
             _timeText.text = (_gameTime--).ToString();
             _descriptionText.text = gameDescription[pos];
             pos++;
 
+            // 게임 UI 안보이게 만들기
             for (int i = _gameElement.Length-1; i >= 0; i--)
             {
                 _gameElement[i].enabled = false;
@@ -86,19 +88,17 @@ public class CGameManager : MonoBehaviour {
 
 	public void CreateBubble()
 	{
-		if (_bubble.activeSelf)
-		{
-            return;
-        }
+		if (_bubble.activeSelf) return;
         _bubble.SetActive(true);
         Invoke("DestroyBubble", 8f);
+        // _bubble.GetComponent<Animator>().Play("Disapper", 0);
     }
 
 	public void DestroyBubble()
 	{
+        _bubble.GetComponent<Animator>().PlayInFixedTime(0);
         _bubble.SetActive(false);
     }
-
 
 
 

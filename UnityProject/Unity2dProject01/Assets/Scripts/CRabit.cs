@@ -3,26 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CRabitJump : MonoBehaviour {
+public class CRabit : MonoBehaviour {
 
     public CGameManager _gameManager;
     public Rigidbody2D _rigidbody;
-    public float _speed;
+    public float _jumpSpeed;
 
     float X_LIMIT_POS = 9.6f;
     float Y_LIMIT_POS = 6.5f;
 
+    public GameObject _shotPrefab;
+    public Transform _shotPos;
+
+    public float _jumpDelayTime, _shotDelayTime;
+    float jumpTimer, shotTimer;
 
     void Start()
 	{
+        // 시작하자마자 게임이 종료되는 것 방지
         _rigidbody.velocity = Vector2.zero;
     }
 
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Space))
+        // 점프 타이머
+        jumpTimer += Time.deltaTime;
+
+		if (Input.GetKeyDown(KeyCode.Space) && jumpTimer >= _jumpDelayTime)
 		{
             _rigidbody.velocity = Vector2.zero;
-            _rigidbody.AddForce(Vector2.up * _speed);
+            _rigidbody.AddForce(Vector2.up * _jumpSpeed);
+            jumpTimer = 0f;
         }
 
         float h = Input.GetAxisRaw("Horizontal");
@@ -46,15 +56,21 @@ public class CRabitJump : MonoBehaviour {
             }
         }
 
+        // 공격 타이머
+        shotTimer += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.LeftControl) && shotTimer >= _shotDelayTime)
+        {
+            Instantiate(_shotPrefab, _shotPos.position, Quaternion.identity);
+            shotTimer = 0f;
+        }
 
     }
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-        // Debug.Log(other.name);
-        if(other.name == "SmallSpring")
+        if(other.tag == "Spring")
 		{
-			_rigidbody.AddForce(Vector2.up * _speed * 2f);
+			_rigidbody.AddForce(Vector2.up * _jumpSpeed * 4f); // 4배 점프 증가
 		}
         else if (other.tag == "Carrot")
         {
@@ -83,6 +99,17 @@ public class CRabitJump : MonoBehaviour {
             _gameManager.CreateBubble();
         }
     }
+
+    // 땅을 걸어다니는 경우 애니메이션 변화
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            GetComponent<Animator>().Play("BrownRun", 0);
+        }
+    }
+
+
 
 
 
