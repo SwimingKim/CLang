@@ -31,7 +31,9 @@ public class CBubleTimer : MonoBehaviour {
         bombs = new GameObject[bombNum];
         for (int i = 0; i < bombNum; i++)
 		{
-			bombs[i] = Instantiate(_bombPrefab, _createPos[i].position, Quaternion.identity);
+            // 박스가 있는지 확인
+
+            bombs[i] = Instantiate(_bombPrefab, _createPos[i].position, Quaternion.identity);
             bombs[i].transform.SetParent(_createPos[i]);
         }
 

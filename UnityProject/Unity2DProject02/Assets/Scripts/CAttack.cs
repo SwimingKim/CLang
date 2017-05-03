@@ -15,9 +15,13 @@ public class CAttack : MonoBehaviour
 	}
 
     // 타일의 충돌을 통해 버블 생성 위치 조정
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        createPos = other.transform;
+        // 현재 위치에 박스나 버블이 있는지 확인
+        if (other.transform.childCount == 0)
+        {
+            createPos = other.transform;
+        }
     }
 
 	IEnumerator MakeBubbleCoroutine()
@@ -32,20 +36,18 @@ public class CAttack : MonoBehaviour
 
     protected bool MakeBubble()
     {
-		GameObject[] bubbles = GameObject.FindGameObjectsWithTag("Bubble");
-
-        // 현재 위치에 버블이 있는지 확인
-        foreach (GameObject item in bubbles)
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyBubble");
+        foreach (GameObject item in enemies)
         {
-            if (item.transform.position == createPos.position)
-            {
-                return false;
-            }
+            if (item.transform.position == createPos.position) return false;
         }
-        // 버블 최대 개수를 초과하는지 확인
-        if (_bombMax <= bubbles.Length) return false;
 
-        Instantiate(_createPrefab, createPos.position, Quaternion.identity);
+        // 버블 최대 개수를 초과하는지 확인
+        // 버블을 만들 지점이 있는지 확인
+        if (_bombMax <= GameObject.FindGameObjectsWithTag("Bubble").Length || createPos == null) return false;
+
+        GameObject gameObject = Instantiate(_createPrefab, createPos.position, Quaternion.identity);
+        gameObject.transform.SetParent(createPos);
 
         return true;
     }

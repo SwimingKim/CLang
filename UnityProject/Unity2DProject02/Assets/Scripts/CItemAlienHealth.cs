@@ -6,11 +6,11 @@ public class CItemAlienHealth : CAlienHealth {
     
 	public override void DoDestroy()
 	{
-        CItemDrop _itemDrop = GetComponent<CItemDrop>();
-		if (_itemDrop != null)
-		{
-            _itemDrop.ItemDrop();
-        }
+        Vector2 position = transform.position;
+
+        Debug.Log("아이템 몬스터 죽음");
+        GameObject.Find("GameManager").GetComponent<CItemDrop>().ItemDrop(position);
+
         base.DoDestroy();
     }
 

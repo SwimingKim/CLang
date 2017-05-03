@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // 주인공 데미지
 public class CHeroDamage : CAlienDamage {
@@ -14,23 +15,29 @@ public class CHeroDamage : CAlienDamage {
         gameManager = GameObject.Find("GameManager").GetComponent<CGameManager>();
     }
 
-    protected override void OnTriggerEnter2D(Collider2D other)
+    protected override void OnCollisionEnter2D(Collision2D other)
     {
-        base.OnTriggerEnter2D(other);
-
-        if (other.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
-            if (other.GetComponent<Animator>().GetBool("Bubble"))
+            if (other.gameObject.GetComponent<Animator>().GetBool("Bubble"))
             {
-                CAlienHealth health = other.GetComponent<CAlienHealth>();
-                // if (health is CBossHealth) (health as CBossHealth).DoDestroy();
-                // else if (health is CItemAlienHealth) (health as CItemAlienHealth).DoDestroy();
-                // else health.DoDestroy();
-                health.SendMessage("DoDestroy");
+                // 버블상태에서 히어로와 충돌한 경우 count up
+                Text starCount = GameObject.Find("StarCountText").GetComponent<Text>();
+                int count = int.Parse(starCount.text);
+                starCount.text = (++count).ToString();
+
+                CAlienHealth otherHealth = other.gameObject.GetComponent<CAlienHealth>();
+                otherHealth.SendMessage("DoDestroy");
+
+                // 업캐스팅
+                // if (otherHealth is CBossHealth) (otherHealth as CBossHealth).DoDestroy();
+                // else if (otherHealth is CItemAlienHealth) (otherHealth as CItemAlienHealth).DoDestroy();
+                // else otherHealth.DoDestroy();
             }
             else
             {
-                health.DoDestroy();
+                (health as CHeroHealth).DoDestroy();
+                // health.SendMessage("DoDestroy");
             }
         }
     }

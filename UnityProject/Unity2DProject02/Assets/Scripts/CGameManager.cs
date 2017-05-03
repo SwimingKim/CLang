@@ -7,23 +7,40 @@ using UnityEngine.SceneManagement;
 public class CGameManager : MonoBehaviour {
 
     public int _bombState =  0;
+    public float _endWaitTime;
 
 	public Image ShieldBar;
     public Text ShieldText;
 
-    public float _endWaitTime;
+    public Image _goImage;
+    public Image _overImage;
 
     void Start()
 	{
-        ShieldBar.enabled = false;
-        ShieldText.enabled = false;
-	}
+        StartCoroutine("GameStart");
+    }
 
 	IEnumerator GameEnd()
 	{
-        yield return new WaitForSeconds(_endWaitTime);
+        // 점수 저장
+        yield return new WaitForSeconds(_endWaitTime - 1);
 
+        _overImage.enabled = true;
+        yield return new WaitForSeconds(1f);
+
+        Text scoreText = GameObject.Find("StarCountText").GetComponent<Text>();
+        PlayerPrefs.SetString("SCORE", scoreText.text);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("End");
+    }
+
+    IEnumerator GameStart()
+    {
+        ShieldBar.enabled = false;
+        ShieldText.enabled = false;
+
+        yield return new WaitForSeconds(1.5f);
+        _goImage.enabled = false;
     }
 
 }

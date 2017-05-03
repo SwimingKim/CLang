@@ -5,14 +5,15 @@ using UnityEngine;
 public class CAutoMovement : CMovement {
 
     public float _walkTime;
-    Rigidbody2D _bossRigidbody;
+    Rigidbody2D _rigidbody;
 
     void Start () {
-        _bossRigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         InvokeRepeating("Walk", _walkTime, _walkTime);
 
-        X_LIMIT_POS = 6f;
-        Y_LIMIT_POS = 2f;
+        X_LIMIT_POS = 9f;
+        Y_LIMIT_POS = 4f;
+
     }
 
 	void Update()
@@ -34,11 +35,11 @@ public class CAutoMovement : CMovement {
         // 1 2
         // 3 4
         Vector2 pos = transform.position;
-        if (pos == new Vector2(-6, 2)) direction = new Vector2(1, -1);
-        if (pos == new Vector2(6, 2)) direction = new Vector2(-1, -1);
-        if (pos == new Vector2(-6, -2)) direction = new Vector2(1, 1);
-        if (pos == new Vector2(6, -2)) direction = new Vector2(-1, 1);
-        _bossRigidbody.AddForce(direction * _speed * 2f);
+        if (pos == new Vector2(-9, 4)) direction = new Vector2(1, -1);
+        if (pos == new Vector2(9, 4)) direction = new Vector2(-1, -1);
+        if (pos == new Vector2(-9, -4)) direction = new Vector2(1, 1);
+        if (pos == new Vector2(9, -4)) direction = new Vector2(-1, 1);
+        _rigidbody.AddForce(direction * _speed * 2f);
     }
 	
 }

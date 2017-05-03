@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CMovement : MonoBehaviour {
 
-    protected float X_LIMIT_POS = 8.5f;
-    protected float Y_LIMIT_POS = 4f;
+    protected float X_LIMIT_POS = 9.5f;
+    protected float Y_LIMIT_POS = 5f;
 
 	public float _speed;
 

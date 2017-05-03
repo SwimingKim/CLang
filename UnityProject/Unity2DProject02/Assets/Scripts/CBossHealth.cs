@@ -37,6 +37,12 @@ public class CBossHealth : CAlienHealth {
             Destroy(item);
         }
 
+        GameObject[] boxes = GameObject.FindGameObjectsWithTag("Box");
+        foreach (GameObject item in boxes)
+        {
+            Destroy(item);
+        }
+
         GameObject[] titles = GameObject.FindGameObjectsWithTag("Tile");
         int coinNum = Random.Range(10, 20);
         for (int i = 0; i < coinNum; i++)

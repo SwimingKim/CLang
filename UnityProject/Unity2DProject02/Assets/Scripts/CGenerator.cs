@@ -9,11 +9,11 @@ public class CGenerator : MonoBehaviour {
     public GameObject[] _createPrefab;
 
     // Use this for initialization
-    void Start () {
+    protected virtual void Start () {
         InvokeRepeating("CreateObject", _createDelayTime, _createDelayTime);
     }
 	
-	void CreateObject()
+	protected virtual void CreateObject()
 	{
         int rand = Random.Range(0, _createPrefab.Length);
         
