@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CGameManager : MonoBehaviour {
 
-    public int _bombState =  0;
+    public static int _bombState =  2;
     public float _endWaitTime;
 
 	public Image ShieldBar;

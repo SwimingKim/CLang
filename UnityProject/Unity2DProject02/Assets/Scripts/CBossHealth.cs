@@ -25,20 +25,8 @@ public class CBossHealth : CAlienHealth {
         Debug.Log("보스 죽음");
         base.DoDestroy();
 
-        GameObject[] bubbles = GameObject.FindGameObjectsWithTag("Bubble");
-		foreach (GameObject item in bubbles)
-		{
-            Destroy(item.gameObject);
-        }
-
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject item in enemys)
-        {
-            Destroy(item);
-        }
-
-        GameObject[] boxes = GameObject.FindGameObjectsWithTag("Box");
-        foreach (GameObject item in boxes)
         {
             Destroy(item);
         }

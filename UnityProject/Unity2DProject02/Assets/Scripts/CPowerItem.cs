@@ -16,7 +16,7 @@ public class CPowerItem : CItem {
 
         if (other.name == "Hero")
 		{
-            if (gameManager._bombState != 2) gameManager._bombState++;
+            CGameManager._bombState++;
             Destroy(gameObject);
         }
 		if (other.tag == "Bomb")

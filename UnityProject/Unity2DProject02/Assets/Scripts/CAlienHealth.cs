@@ -20,6 +20,30 @@ public class CAlienHealth : MonoBehaviour
         }
         else // 히어로나 보스의 죽음
         {
+            GameObject[] bubbles = GameObject.FindGameObjectsWithTag("Bubble");
+            foreach (GameObject item in bubbles)
+            {
+                Destroy(item.gameObject);
+            }
+
+            GameObject[] enemyBubbles = GameObject.FindGameObjectsWithTag("EnemyBubble");
+            foreach (GameObject item in enemyBubbles)
+            {
+                Destroy(item.gameObject);
+            }
+
+            GameObject[] bombs = GameObject.FindGameObjectsWithTag("Bomb");
+            foreach (GameObject item in bombs)
+            {
+                Destroy(item.gameObject);
+            }
+
+            GameObject[] boxes = GameObject.FindGameObjectsWithTag("Box");
+            foreach (GameObject item in boxes)
+            {
+                item.GetComponent<CBoxCollision>().RemoveBox();
+            }
+
             _gameManager._endWaitTime = gameObject.name == "Hero" ? 1.5f : 7f;
 
             _gameManager.StartCoroutine("GameEnd");

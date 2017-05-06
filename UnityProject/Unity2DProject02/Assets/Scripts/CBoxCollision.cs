@@ -5,17 +5,7 @@ using UnityEngine;
 public class CBoxCollision : MonoBehaviour
 {
     // 1회만 충돌 체크하도록 확인
-    bool isCollision = true;
-
-    void OnTriggerEnter2D(Collider2D other)
-	{
-		if (other.tag == "Bomb" && isCollision)
-		{
-            isCollision = false;
-
-            RemoveBox();
-        }
-	}
+    public bool isCollision = true;
 
     public void RemoveBox()
     {
@@ -27,8 +17,6 @@ public class CBoxCollision : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<CItemDrop>().StartCoroutine("ItemDropCoroutine", position);
         }
         Destroy(gameObject);
-
     }
-
 
 }

@@ -44,7 +44,8 @@ public class CAttack : MonoBehaviour
 
         // 버블 최대 개수를 초과하는지 확인
         // 버블을 만들 지점이 있는지 확인
-        if (_bombMax <= GameObject.FindGameObjectsWithTag("Bubble").Length || createPos == null) return false;
+        // 박스가 있는지 확인
+        if (_bombMax <= GameObject.FindGameObjectsWithTag("Bubble").Length || createPos == null || createPos.transform.childCount != 0) return false;
 
         GameObject gameObject = Instantiate(_createPrefab, createPos.position, Quaternion.identity);
         gameObject.transform.SetParent(createPos);

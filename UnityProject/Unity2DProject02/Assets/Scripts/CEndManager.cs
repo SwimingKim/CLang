@@ -16,6 +16,10 @@ public class CEndManager : MonoBehaviour {
     public void OnRestartButtonClick()
 	{
         SceneManager.LoadScene("Game");
+
+        // 게임 초기화
+        CGameManager._bombState = 2;
+        Destroy(GameObject.Find("Ground"));
     }
 
 }

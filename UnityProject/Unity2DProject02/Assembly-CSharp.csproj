@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\CGameManager.cs" />
      <Compile Include="Assets\Scripts\CGenerator.cs" />
      <Compile Include="Assets\Scripts\CHeroAttack.cs" />
+     <Compile Include="Assets\Scripts\CHeroBubbleTimer.cs" />
      <Compile Include="Assets\Scripts\CHeroDamage.cs" />
      <Compile Include="Assets\Scripts\CHeroHealth.cs" />
      <Compile Include="Assets\Scripts\CInputMovement.cs" />
