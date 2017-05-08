@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MovingObject
 {
-
     public int playerDamage;
 
     private Animator animator;

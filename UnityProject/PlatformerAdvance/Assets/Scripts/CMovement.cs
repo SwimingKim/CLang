@@ -5,12 +5,12 @@ using UnityEngine;
 public class CMovement : MonoBehaviour
 {
     protected CCharacterState _characterState; // 캐릭터 상태
-  
+
     protected virtual void Awake()
     {
         _characterState = GetComponent<CCharacterState>();
     }
-  
+
     // 방향 전환
     public void Flip()
     {
@@ -18,7 +18,7 @@ public class CMovement : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-  
+
         // 시선 정보 변경
         _characterState._isRightDir = !_characterState._isRightDir;
     }
