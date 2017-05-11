@@ -130,7 +130,7 @@ namespace SpriteAnimationPreview
 
             private List<Editor> GetSpriteEditors(params Sprite[] sprites)
             {
-                var type = Types.GetType("UnityEditor.SpriteInspector", "UnityEditor.dll");
+                var type = System.Type.GetType("UnityEditor.SpriteInspector,UnityEditor.dll");
                 var editors = new List<Editor>();
                 foreach (var sprite in sprites)
                 {
