@@ -27,8 +27,8 @@ public class CInputMovement : MonoBehaviour
 		// 공격 중이면 이동하지 말아라
 		if (_anim.IsAttackAnimationPlaying()) return;
 
-		float h = Input.GetAxisRaw("Horizontal");
-		float v = Input.GetAxisRaw("Vertical");
+		float h = Input.GetAxis("Horizontal");
+		float v = Input.GetAxis("Vertical");
 
 		// 입력 방향 벡터 설정
 		_moveDirection = new Vector3(h, 0f, v);

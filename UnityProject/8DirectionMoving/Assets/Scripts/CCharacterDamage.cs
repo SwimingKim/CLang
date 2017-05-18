@@ -13,17 +13,20 @@ public class CCharacterDamage : MonoBehaviour
 
 	private Animator _animator;
 
-	public bool _isDeath = false; // 사망 여부
+	CMonsterMovement _movement;
+	CMonsterFSM _fsm;
 
 	private void Awake()
 	{
 		_animator = GetComponent<Animator>();
+		_movement = GetComponent<CMonsterMovement>();
+		_fsm = GetComponent<CMonsterFSM>();
 	}
 
 	// 피격 처리
 	public void Damage()
 	{
-		if (_isDeath) return; // 이미 사망상태면 패쓰
+		if (_fsm._state == CMonsterFSM.STATE.DIE) return; // 이미 사망상태면 패쓰
 
 		// 만약에 피격 이펙트가 실행중이 아니면
 		if (!_pcSystem.isPlaying)
@@ -39,11 +42,18 @@ public class CCharacterDamage : MonoBehaviour
 		int hp = (int) (_hpProgress.fillAmount * 100f);
 		if (hp <= 0)
 		{
-			// 사망 애니메이션을 재생
-			_animator.SetTrigger("Death");
-			_isDeath = true; // 사망 상태 설정
-			return;
+			Die();
+			// return;
 		}
+	}
+
+	public void Die()
+	{
+		// 사망 애니메이션을 재생
+		_animator.SetTrigger("Death");
+		_movement.Stop(); // 이동 중지
+		_fsm._state = CMonsterFSM.STATE.DIE;
+		Destroy(gameObject, 3f);
 	}
 
 
