@@ -7,7 +7,7 @@ public class CGameManager : MonoBehaviour
 {
     public static CGameManager instance = null;
     public bool passMain = false;
-    public int sceneNum;
+    public int SceneNum;
 
     void Awake()
     {
@@ -16,10 +16,10 @@ public class CGameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void LoadScene(int sceneNum)
+    public void LoadScene(int SceneNum)
     {
-        this.sceneNum = sceneNum;
-        switch (sceneNum)
+        this.SceneNum = SceneNum;
+        switch (SceneNum)
         {
             case 0: // Main
                 SceneManager.LoadScene("Main");

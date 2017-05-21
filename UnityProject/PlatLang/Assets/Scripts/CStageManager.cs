@@ -14,16 +14,15 @@ public class CStageManager : MonoBehaviour
     }
     public LANGTYPE lang;
 
-    string wordText;
-    string speakText;
+    string WordTxt;
+    string SpeakTxt;
 
     int stageNum;
     GameObject panel;
 
-    // public GameObject CanvasType;
+    public Text WordText;
     public GameObject WordPanel;
     public GameObject StudyPanel;
-    Text WordText;
 
     public List<Button> NoOverlaps;
 
@@ -32,12 +31,6 @@ public class CStageManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         else if (instance != this) Destroy(gameObject);
-
-        // if (CanvasType != null)
-        // {
-        //     Instantiate(CanvasType);
-        //     Debug.Log("시작");
-        // }
     }
 
     void Start()
@@ -56,25 +49,25 @@ public class CStageManager : MonoBehaviour
         }
     }
 
-    void Init(int langNum)
+    void Init(int langMode)
     {
-        switch (langNum)
+        switch (langMode)
         {
             case 0:
                 lang = LANGTYPE.ENG;
-                wordText = speakText = "Monkey";
+                WordTxt = SpeakTxt = "Monkey";
                 EasyTTSUtil.Initialize(EasyTTSUtil.UnitedStates);
                 break;
             case 1:
                 lang = LANGTYPE.CH;
-                wordText = "猴子[hóuzi]";
-                speakText = wordText.Split('[')[0];
+                WordTxt = "猴子[hóuzi]";
+                SpeakTxt = WordTxt.Split('[')[0];
                 EasyTTSUtil.Initialize(EasyTTSUtil.China);
                 break;
-            case 2:
+            case 2: case 3: case 4:
                 lang = LANGTYPE.JP;
-                wordText = "さる[猿]";
-                speakText = wordText.Split('[')[0];
+                WordTxt = "さる[猿]";
+                SpeakTxt = WordTxt.Split('[')[0];
                 EasyTTSUtil.Initialize(EasyTTSUtil.Japan);
                 break;
         }
@@ -84,7 +77,7 @@ public class CStageManager : MonoBehaviour
     {
         Init(langNum);
         WordPanel.SetActive(true);
-        WordText.text = wordText;
+        WordText.text = WordTxt;
     }
 
     public void HideWord()
@@ -95,9 +88,9 @@ public class CStageManager : MonoBehaviour
 
     public void SpeakWord()
     {
-        EasyTTSUtil.SpeechFlush(speakText);
+        EasyTTSUtil.SpeechFlush(SpeakTxt);
         StartCoroutine("PlayTTSCoroutine");
-        Debug.Log(speakText + " TTS");
+        Debug.Log(SpeakTxt + " TTS");
     }
 
     void OnApplicationQuit()

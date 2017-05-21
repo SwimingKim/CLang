@@ -4,22 +4,53 @@ using UnityEngine;
 
 public class CPlayerMovement : MonoBehaviour
 {
-    public GameObject player;
+    float touchFos = 5f;
+    Rigidbody2D rigidBody;
+    float h, v;
 
-    void Start()
+    void Awake()
     {
-        this.player = GameObject.Find("Gnome");
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
-	void Update()
-	{
+    void Update()
+    {
+#if UNITY_EDITOR || UNITY_STANDALONE
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
+#elif UNITY_ANDROID || UNITY_IOS
+        Debug.Log("모바일입니다");
+#endif
 
         Vector2 direction = new Vector2(h, v);
 
         transform.Translate(direction * 3f * Time.deltaTime);
-	}
+    }
+
+    public void PressKey(int nKey)
+    {
+        switch (nKey)
+        {
+            case 1: //left
+                h = -1;
+                break;
+            case 2: //right
+                h = 1;
+                break;
+            case 3: //up
+                v = 1;
+                break;
+            case 4: //down
+                v = -1;
+                break;
+        }
+    }
+
+    public void StopMove()
+    {
+        h = v = 0;
+        rigidBody.velocity = Vector2.zero;
+    }
 
     void OnApplicationQuit()
     {
