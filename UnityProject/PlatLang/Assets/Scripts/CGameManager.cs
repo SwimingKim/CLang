@@ -5,34 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class CGameManager : MonoBehaviour
 {
-    void Start()
+    public static CGameManager instance = null;
+    public bool passMain = false;
+    public int sceneNum;
+
+    void Awake()
     {
+        if (instance == null) instance = this;
+        else if (instance != this) Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
 
-
-    public void LoadAttackStage()
+    public void LoadScene(int sceneNum)
     {
-        SceneManager.LoadScene("Attack");
+        this.sceneNum = sceneNum;
+        switch (sceneNum)
+        {
+            case 0: // Main
+                SceneManager.LoadScene("Main");
+                break;
+            case 1: // Attack
+                SceneManager.LoadScene("Attack");
+                CSoundManager.instance.PlayEffect();
+                break;
+            case 2: // Blink
+                SceneManager.LoadScene("Blink");
+                CSoundManager.instance.PlayEffect();
+                break;
+            case 3: // Bomb
+                SceneManager.LoadScene("Bomb");
+                CSoundManager.instance.PlayEffect();
+                break;
+            case 4: // Smash
+                SceneManager.LoadScene("Smash");
+                CSoundManager.instance.PlayEffect();
+                break;
+        }
+
     }
 
-    public void LoadSmashStage()
-    {
-        SceneManager.LoadScene("Smash");
-    }
-
-    public void LoadBlinkStage()
-    {
-        SceneManager.LoadScene("Blink");
-    }
-
-    public void LoadBombStage()
-    {
-        SceneManager.LoadScene("Bomb");
-    }
-
-    public void LoadMainStage()
-    {
-        SceneManager.LoadScene("Main");
-    }
 }
