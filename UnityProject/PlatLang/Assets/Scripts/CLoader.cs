@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CLoader : MonoBehaviour
 {
-    public GameObject gameManager;
-    public GameObject soundManager;
+    public GameObject _gameManager;
+    public GameObject _soundManager;
 
     void Awake()
     {
@@ -17,9 +17,9 @@ public class CLoader : MonoBehaviour
         }
         else // 메인에서 불러오기
         {
-            if (CGameManager.instance == null && gameManager != null) Instantiate(gameManager);
-            if (CSoundManager.instance == null && soundManager != null) Instantiate(soundManager);
-            CGameManager.instance.passMain = true;
+            if (CGameManager.instance == null && _gameManager != null) Instantiate(_gameManager);
+            if (CSoundManager.instance == null && _soundManager != null) Instantiate(_soundManager);
+            // CGameManager.instance._passMain = true;
         }
 
     }

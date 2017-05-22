@@ -8,10 +8,10 @@ public class CSoundManager : MonoBehaviour
 {
     public static CSoundManager instance = null;
 
-    public AudioSource mainSource;
-    public AudioSource effectSource;
+    public AudioSource _mainSource;
+    public AudioSource _effectSource;
 
-    public bool isPlayingBGM;
+    public bool _isPlayingBGM;
 
     void Awake()
     {
@@ -22,43 +22,43 @@ public class CSoundManager : MonoBehaviour
 
     void Start()
     {
-        isPlayingBGM = PlayerPrefs.GetInt("BGM", 1) == 1 ? true  : false;
-        Debug.Log("start = "+isPlayingBGM);
+        _isPlayingBGM = PlayerPrefs.GetInt("BGM", 1) == 1 ? true  : false;
+        Debug.Log("start = "+_isPlayingBGM);
     }
 
     public void PlayEffect()
     {
         // effectSource.pitch = 0.9f;
-        effectSource.Play();
+        _effectSource.Play();
     }
 
     public void PlayBGM()
     {
-        isPlayingBGM = true;
-        if (mainSource.time == 0)
+        _isPlayingBGM = true;
+        if (_mainSource.time == 0)
         {
-            mainSource.Play();
+            _mainSource.Play();
         }
         else
         {
-            mainSource.UnPause();
+            _mainSource.UnPause();
         }
     }
 
     public void PauseBGM()
     {
-        isPlayingBGM = false;
-        mainSource.Pause();
+        _isPlayingBGM = false;
+        _mainSource.Pause();
     }
 
     void OnDestroy()
     {
-        PlayerPrefs.SetInt("BGM", isPlayingBGM ? 1 : 0);
+        PlayerPrefs.SetInt("BGM", _isPlayingBGM ? 1 : 0);
     }
 
     void OnApplicationQuit()
     {
-        mainSource.Stop();
+        _mainSource.Stop();
     }
 
 }

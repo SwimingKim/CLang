@@ -5,38 +5,38 @@ using UnityEngine.UI;
 
 public class CBGMStateChange : MonoBehaviour
 {
-    Image img;
+    Image _img;
 
-    public Sprite normalSprite, pressedSprite;
+    public Sprite _normalSprite, _pressedSprite;
 
     void Awake()
     {
-        img = GetComponent<Image>();
+        _img = GetComponent<Image>();
     }
 
     void Start()
     {
-        if (CSoundManager.instance.isPlayingBGM)
+        if (CSoundManager.instance._isPlayingBGM)
         {
 			CSoundManager.instance.PlayBGM();
         }
 		else
 		{
-			img.sprite = pressedSprite;
+			_img.sprite = _pressedSprite;
 		}
     }
 
     public void ChangeBGMState()
     {
-        if (CSoundManager.instance.isPlayingBGM)
+        if (CSoundManager.instance._isPlayingBGM)
         {
             CSoundManager.instance.PauseBGM();
-            img.sprite = pressedSprite;
+            _img.sprite = _pressedSprite;
         }
         else
         {
             CSoundManager.instance.PlayBGM();
-            img.sprite = normalSprite;
+            _img.sprite = _normalSprite;
         }
     }
 }

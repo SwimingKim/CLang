@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class CGameManager : MonoBehaviour
 {
     public static CGameManager instance = null;
-    public bool passMain = false;
-    public int SceneNum;
+    public int _sceneNum;
 
     void Awake()
     {
@@ -18,7 +17,7 @@ public class CGameManager : MonoBehaviour
 
     public void LoadScene(int SceneNum)
     {
-        this.SceneNum = SceneNum;
+        this._sceneNum = SceneNum;
         switch (SceneNum)
         {
             case 0: // Main

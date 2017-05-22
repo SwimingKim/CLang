@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class CCameraMovement : MonoBehaviour
 {
-    float touchFos = 5f;
-    Rigidbody2D rigidBody;
+    float _touchFos = 5f;
+    Rigidbody2D _rigidBody;
     float h, v;
 
     void Awake()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
+        _rigidBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         Vector2 direction = new Vector2(h, v);
-        rigidBody.AddForce(direction * touchFos);
+        _rigidBody.AddForce(direction * _touchFos);
     }
 
     public void PressKey(int nKey)
@@ -41,7 +41,7 @@ public class CCameraMovement : MonoBehaviour
     public void StopMove()
     {
         h = v = 0;
-        rigidBody.velocity = Vector2.zero; 
+        _rigidBody.velocity = Vector2.zero; 
     }
 
 }

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class CPlayerMovement : MonoBehaviour
 {
-    float touchFos = 5f;
-    Rigidbody2D rigidBody;
+    float _touchFos = 5f;
+    Rigidbody2D _rigidBody;
     float h, v;
+
+    public bool _main;
 
     void Awake()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
+        _rigidBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -49,7 +51,7 @@ public class CPlayerMovement : MonoBehaviour
     public void StopMove()
     {
         h = v = 0;
-        rigidBody.velocity = Vector2.zero;
+        _rigidBody.velocity = Vector2.zero;
     }
 
     void OnApplicationQuit()
