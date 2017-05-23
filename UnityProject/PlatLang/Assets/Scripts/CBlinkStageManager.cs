@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class CBlinkStageManager : CStageManager {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	protected override void Awake()
+	{
+		base.Awake();
+		Init(1);
 	}
 }

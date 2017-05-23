@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class CAttackStageManager : CStageManager {
 
-	// Use this for initialization
-	void Start () {
-		
+	protected override void Awake()
+	{
+		base.Awake();
+		Init(0);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

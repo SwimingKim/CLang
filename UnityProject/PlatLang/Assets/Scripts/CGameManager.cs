@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CGameManager : MonoBehaviour
 {
     public static CGameManager instance = null;
+    [HideInInspector]
     public int _sceneNum;
 
     void Awake()

@@ -7,30 +7,23 @@ using UnityEngine.SceneManagement;
 // 게임화면에서 스테이지를 관리하는 클래스
 public class CStageManager : MonoBehaviour
 {
-    // public static CStageManager instance = null;
-    public string _passMain;
-
     public enum LANGTYPE
     {
         ENG, JP, CH
     }
     public LANGTYPE _lang;
 
-    string _wordTxt;
-    string _speakTxt;
-
-    int _stageNum;
-    GameObject _panel;
-
-    public Text _wordText;
     public GameObject _wordPanel;
     public GameObject _studyPanel;
 
-    public List<Button> _noOverlaps;
+    public Text _wordText, _koreanText;
+    public List<Button> _noOverlaps; // TTS 재생 시 실행 방지
+    public Button[] _studyItems; // 습득한 단어 아이템
 
-    public Button[] _studyWord;
+    Dictionary<string, string> wordData = new Dictionary<string, string>();
+    string _wordTxt, _speakTxt, _koreanTxt;
 
-    void Awake()
+    protected virtual void Awake()
     {
         // 바로 메인으로 시작하기 위한 임시 함수
         int passMain = PlayerPrefs.GetInt("passMain", 0);
@@ -39,59 +32,109 @@ public class CStageManager : MonoBehaviour
             SceneManager.LoadScene("Main");
             PlayerPrefs.SetInt("passMain", 1);
         }
+        // Init(0); // 0 : 영어, 1 : 중국어, 2 : 일본어
     }
 
-    void Init(int langMode)
+    protected void Init(int langMode)
     {
+        Debug.Log("Init");
+
+        // 데이터 세팅 (임시)
+        ChooseStudyData(langMode);
+
+        // StudyPanel 세팅
+        _studyItems = _studyPanel.GetComponentsInChildren<Button>();
         // 단어 학습 전으로 돌리기
-        foreach (Button item in _studyWord)
+        // foreach (Button item in _studyItems)
+        // {
+        //     item.image.sprite = item.spriteState.pressedSprite;
+        //     Debug.Log("이미지 변경");
+        // }
+        Button[] studyButtons = _studyPanel.GetComponentsInChildren<Button>();
+        foreach (Button item in studyButtons)
         {
-            item.image.sprite = item.spriteState.pressedSprite;
+            _noOverlaps.Add(item);
         }
 
-        // 언어 설정
+        // WordPanel 세팅
+        _wordText = _wordPanel.GetComponentsInChildren<Text>()[0];
+        _koreanText = _wordPanel.GetComponentsInChildren<Text>()[1];
+        Button[] speakButtons = _wordPanel.GetComponentsInChildren<Button>();
+        foreach (Button item in speakButtons)
+        {
+            _noOverlaps.Add(item);
+        }
+    }
+
+    // 언어 설정
+    void ChooseStudyData(int langMode)
+    {
         switch (langMode)
         {
             case 0:
                 _lang = LANGTYPE.ENG;
-                _wordTxt = _speakTxt = "Monkey";
                 EasyTTSUtil.Initialize(EasyTTSUtil.UnitedStates);
+                wordData["원숭이"] = "Monkey";
+                wordData["토끼"] = "Rabit";
+                wordData["돌고래"] = "Dolphin";
+                wordData["호랑이"] = "Tiger";
+                wordData["사슴"] = "Deer";
                 break;
             case 1:
                 _lang = LANGTYPE.CH;
-                _wordTxt = "猴子[hóuzi]";
-                _speakTxt = _wordTxt.Split('[')[0];
                 EasyTTSUtil.Initialize(EasyTTSUtil.China);
+                wordData["원숭이"] = "猴子[hóuzi]";
+                wordData["토끼"] = "兔子[tùzi]";
+                wordData["돌고래"] = "海豚[hǎitún]";
+                wordData["호랑이"] = "老虎[lǎohǔ]";
+                wordData["사슴"] = "鹿[lù]";
                 break;
             case 2:
                 _lang = LANGTYPE.JP;
-                _wordTxt = "さる[猿]";
-                _speakTxt = _wordTxt.Split('[')[0];
                 EasyTTSUtil.Initialize(EasyTTSUtil.Japan);
+                wordData["원숭이"] = "さる[猿]";
+                wordData["토끼"] = "うさぎ[兎、兔]";
+                wordData["돌고래"] = "いるか[海豚]";
+                wordData["호랑이"] = "とら[虎]";
+                wordData["사슴"] = "しか[鹿]";
                 break;
-            case 3:
-            case 4:
-                break;
-        }
-
-        Button[] studyButton = _studyPanel.GetComponentsInChildren<Button>();
-        Button[] speakButton = _wordPanel.GetComponentsInChildren<Button>();
-
-        foreach (Button item in studyButton)
-        {
-            _noOverlaps.Add(item);
-        }
-        foreach (Button item in speakButton)
-        {
-            _noOverlaps.Add(item);
         }
     }
 
-    public void ShowWord(int langNum)
+    public void ShowWord(int order)
     {
-        Init(langNum);
+        switch (order)
+        {
+            case 0:
+                _koreanTxt = "원숭이";
+                break;
+            case 1:
+                _koreanTxt = "토끼";
+                break;
+            case 2:
+                _koreanTxt = "돌고래";
+                break;
+            case 3:
+                _koreanTxt = "호랑이";
+                break;
+            case 4:
+                _koreanTxt = "사슴";
+                break;
+        }
+
         _wordPanel.SetActive(true);
-        _wordText.text = _wordTxt;
+        if (_lang == LANGTYPE.ENG)
+        {
+            _koreanText.text = _koreanTxt;
+            _speakTxt = _wordText.text = wordData[_koreanTxt];
+        }
+        else
+        {
+            _koreanText.text = _koreanTxt;
+            _wordText.text = wordData[_koreanTxt];
+            _speakTxt = _wordText.text.Split('[')[0];
+        }
+        Debug.Log(_wordText.text + " : " + _speakTxt);
     }
 
     public void HideWord()
@@ -106,7 +149,6 @@ public class CStageManager : MonoBehaviour
         StartCoroutine("PlayTTSCoroutine");
         Debug.Log(_speakTxt + " TTS");
     }
-
 
     IEnumerator PlayTTSCoroutine()
     {
@@ -126,6 +168,12 @@ public class CStageManager : MonoBehaviour
     protected void StageSpecialAction()
     {
 
+    }
+
+    void OnDestroy()
+    {
+        // 임시
+        _noOverlaps.Clear();
     }
 
     void OnApplicationQuit()
