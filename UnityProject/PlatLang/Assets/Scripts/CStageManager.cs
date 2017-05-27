@@ -174,6 +174,7 @@ public class CStageManager : MonoBehaviour
     {
         // 임시
         _noOverlaps.Clear();
+        if(CSoundManager.instance != null) CSoundManager.instance._mainSource.Stop();
     }
 
     void OnApplicationQuit()

@@ -8,6 +8,9 @@ public class CGameManager : MonoBehaviour
     public static CGameManager instance = null;
     [HideInInspector]
     public int _sceneNum;
+    
+    public int stage;
+    public int lang;
 
     void Awake()
     {
@@ -26,22 +29,28 @@ public class CGameManager : MonoBehaviour
                 break;
             case 1: // Attack
                 SceneManager.LoadScene("Attack");
-                CSoundManager.instance.PlayEffect();
+                CSoundManager.instance.PlayStart();
                 break;
             case 2: // Blink
                 SceneManager.LoadScene("Blink");
-                CSoundManager.instance.PlayEffect();
+                CSoundManager.instance.PlayStart();
                 break;
             case 3: // Bomb
                 SceneManager.LoadScene("Bomb");
-                CSoundManager.instance.PlayEffect();
+                CSoundManager.instance.PlayStart();
                 break;
             case 4: // Smash
                 SceneManager.LoadScene("Smash");
-                CSoundManager.instance.PlayEffect();
+                CSoundManager.instance.PlayStart();
                 break;
         }
 
+    }
+
+    public void StartStage()
+    {
+        LoadScene(stage);
+        Debug.Log(stage + "씬 시작");
     }
 
 }

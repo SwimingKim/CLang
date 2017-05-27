@@ -10,6 +10,7 @@ public class CSoundManager : MonoBehaviour
 
     public AudioSource _mainSource;
     public AudioSource _effectSource;
+    public AudioSource _startSource;
 
     public bool _isPlayingBGM;
 
@@ -26,9 +27,13 @@ public class CSoundManager : MonoBehaviour
         Debug.Log("start = "+_isPlayingBGM);
     }
 
+    public void PlayStart()
+    {
+        _startSource.Play();
+    }
+
     public void PlayEffect()
     {
-        // effectSource.pitch = 0.9f;
         _effectSource.Play();
     }
 

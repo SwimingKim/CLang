@@ -504,18 +504,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 161002331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 161002335}
-        m_MethodName: ChangeCanvas
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 111
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &161002335
@@ -526,9 +515,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 161002329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdca286973ef4556b287ed7db537341, type: 3}
+  m_Script: {fileID: 11500000, guid: d6c9967a785824c9d86600abfd8858aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 1
 --- !u!114 &161002336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,7 +527,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 161002329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b34729f7dc44461bfc6047baadc83a, type: 3}
+  m_Script: {fileID: 11500000, guid: 479baa7e2b8a44731ba8a1ec11d6b68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isSelect: 0
@@ -554,7 +544,6 @@ GameObject:
   - component: {fileID: 219442174}
   - component: {fileID: 219442177}
   - component: {fileID: 219442173}
-  - component: {fileID: 219442178}
   m_Layer: 5
   m_Name: StageCanvas
   m_TagString: Untagged
@@ -680,17 +669,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &219442178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 219442172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a689c922b2bd94157b75cf50ee6cd037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &233330622
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +754,8 @@ GameObject:
   - component: {fileID: 255037462}
   - component: {fileID: 255037461}
   - component: {fileID: 255037460}
+  - component: {fileID: 255037464}
+  - component: {fileID: 255037463}
   m_Layer: 5
   m_Name: Jp
   m_TagString: Untagged
@@ -822,9 +802,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.32156864, g: 0.52156866, b: 0.76862746, a: 1}
-    m_PressedColor: {r: 0.32156864, g: 0.52156866, b: 0.7686275, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.39215687}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -840,19 +820,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 255037461}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114658335318598800, guid: 999a5c339a0ac46ebb344770e1a77f23,
-          type: 2}
-        m_MethodName: LoadScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &255037461
@@ -888,6 +856,33 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 255037458}
+--- !u!114 &255037463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255037458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8634a21a19ad04fbea5a21c4711b0364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelect: 0
+  characterSprite:
+  - {fileID: 21300000, guid: 9190c20fdaccd486c87b03278f8be2ab, type: 3}
+  - {fileID: 21300000, guid: 7bb61dfd5de1c4e11819eb4d2e499e05, type: 3}
+--- !u!114 &255037464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255037458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c9967a785824c9d86600abfd8858aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 2
 --- !u!1 &258935352
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,6 +933,13 @@ MonoBehaviour:
   - {fileID: 407927665}
   - {fileID: 1864278110}
   - {fileID: 1056518507}
+  _langPanel:
+  - {fileID: 617936101}
+  - {fileID: 1203263579}
+  - {fileID: 255037458}
+  characterImage:
+  - {fileID: 888257155}
+  - {fileID: 1255703130}
   canvasNum: 0
   stageNum: 0
 --- !u!1 &287087641
@@ -1501,18 +1503,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 407927667}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 407927671}
-        m_MethodName: ChangeCanvas
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 112
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &407927671
@@ -1523,9 +1514,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 407927665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdca286973ef4556b287ed7db537341, type: 3}
+  m_Script: {fileID: 11500000, guid: d6c9967a785824c9d86600abfd8858aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 2
 --- !u!114 &407927672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,7 +1526,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 407927665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b34729f7dc44461bfc6047baadc83a, type: 3}
+  m_Script: {fileID: 11500000, guid: 479baa7e2b8a44731ba8a1ec11d6b68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isSelect: 0
@@ -1693,6 +1685,8 @@ GameObject:
   - component: {fileID: 617936105}
   - component: {fileID: 617936104}
   - component: {fileID: 617936103}
+  - component: {fileID: 617936107}
+  - component: {fileID: 617936106}
   m_Layer: 5
   m_Name: Eng
   m_TagString: Untagged
@@ -1739,9 +1733,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.32156864, g: 0.52156866, b: 0.76862746, a: 1}
-    m_PressedColor: {r: 0.32156864, g: 0.52156866, b: 0.7686275, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.39215687}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1757,19 +1751,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 617936104}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114658335318598800, guid: 999a5c339a0ac46ebb344770e1a77f23,
-          type: 2}
-        m_MethodName: LoadScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &617936104
@@ -1805,6 +1787,33 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 617936101}
+--- !u!114 &617936106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617936101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8634a21a19ad04fbea5a21c4711b0364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelect: 0
+  characterSprite:
+  - {fileID: 21300000, guid: a2509be42d5b6423fbe857a112fe3684, type: 3}
+  - {fileID: 21300000, guid: 84876ed9fbe82474fb8a6858503470b6, type: 3}
+--- !u!114 &617936107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617936101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c9967a785824c9d86600abfd8858aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
 --- !u!1 &706827139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,7 +2403,7 @@ GameObject:
   - component: {fileID: 888257156}
   - component: {fileID: 888257155}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ManImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2955,18 +2964,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1056518509}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1056518513}
-        m_MethodName: ChangeCanvas
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 114
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1056518513
@@ -2977,9 +2975,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1056518507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdca286973ef4556b287ed7db537341, type: 3}
+  m_Script: {fileID: 11500000, guid: d6c9967a785824c9d86600abfd8858aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 4
 --- !u!114 &1056518514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2988,7 +2987,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1056518507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b34729f7dc44461bfc6047baadc83a, type: 3}
+  m_Script: {fileID: 11500000, guid: 479baa7e2b8a44731ba8a1ec11d6b68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isSelect: 0
@@ -3349,6 +3348,8 @@ GameObject:
   - component: {fileID: 1203263583}
   - component: {fileID: 1203263582}
   - component: {fileID: 1203263581}
+  - component: {fileID: 1203263585}
+  - component: {fileID: 1203263584}
   m_Layer: 5
   m_Name: Ch
   m_TagString: Untagged
@@ -3395,9 +3396,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.32156864, g: 0.52156866, b: 0.76862746, a: 1}
-    m_PressedColor: {r: 0.32156864, g: 0.52156866, b: 0.7686275, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.39215687}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3413,19 +3414,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1203263582}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114658335318598800, guid: 999a5c339a0ac46ebb344770e1a77f23,
-          type: 2}
-        m_MethodName: LoadScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1203263582
@@ -3461,6 +3450,33 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1203263579}
+--- !u!114 &1203263584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1203263579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8634a21a19ad04fbea5a21c4711b0364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelect: 0
+  characterSprite:
+  - {fileID: 21300000, guid: b539a65e9d70547978a6f4d3238c286e, type: 3}
+  - {fileID: 21300000, guid: b2a958994f1354571a898fb358386d4f, type: 3}
+--- !u!114 &1203263585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1203263579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c9967a785824c9d86600abfd8858aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 1
 --- !u!1 &1255703128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,7 +3488,7 @@ GameObject:
   - component: {fileID: 1255703131}
   - component: {fileID: 1255703130}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: WomanImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4484,8 +4500,9 @@ GameObject:
   - component: {fileID: 1603130157}
   - component: {fileID: 1603130159}
   - component: {fileID: 1603130158}
+  - component: {fileID: 1603130160}
   m_Layer: 5
-  m_Name: Image
+  m_Name: LangImgae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4544,6 +4561,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603130156}
+--- !u!114 &1603130160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603130156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1603130158}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 258935354}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1604910730
 GameObject:
   m_ObjectHideFlags: 0
@@ -4630,7 +4699,6 @@ GameObject:
   - component: {fileID: 1673606973}
   - component: {fileID: 1673606972}
   - component: {fileID: 1673606971}
-  - component: {fileID: 1673606976}
   m_Layer: 5
   m_Name: LangCanvas
   m_TagString: Untagged
@@ -4677,7 +4745,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1673606976}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeCanvas
         m_Mode: 3
         m_Arguments:
@@ -4768,17 +4836,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -1400}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1673606976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1673606970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a689c922b2bd94157b75cf50ee6cd037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1678641230
 GameObject:
   m_ObjectHideFlags: 0
@@ -4793,7 +4850,7 @@ GameObject:
   - component: {fileID: 1678641235}
   - component: {fileID: 1678641236}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: IntroCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4915,18 +4972,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1673606976}
-        m_MethodName: ChangeCanvas
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 101
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1678641236
@@ -4937,9 +4983,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1678641230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a689c922b2bd94157b75cf50ee6cd037, type: 3}
+  m_Script: {fileID: 11500000, guid: b6776f100b5c24cc69bf52a260094114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
 --- !u!1 &1720001466
 GameObject:
   m_ObjectHideFlags: 0
@@ -5257,18 +5304,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1864278112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1864278116}
-        m_MethodName: ChangeCanvas
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 113
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1864278116
@@ -5279,9 +5315,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1864278110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdca286973ef4556b287ed7db537341, type: 3}
+  m_Script: {fileID: 11500000, guid: d6c9967a785824c9d86600abfd8858aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 3
 --- !u!114 &1864278117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5290,7 +5327,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1864278110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b34729f7dc44461bfc6047baadc83a, type: 3}
+  m_Script: {fileID: 11500000, guid: 479baa7e2b8a44731ba8a1ec11d6b68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isSelect: 0
