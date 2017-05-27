@@ -7,7 +7,6 @@ public class CGameManager : MonoBehaviour
 {
     public static CGameManager instance = null;
     [HideInInspector]
-    public int _sceneNum;
     
     public int stage;
     public int lang;
@@ -21,7 +20,7 @@ public class CGameManager : MonoBehaviour
 
     public void LoadScene(int SceneNum)
     {
-        this._sceneNum = SceneNum;
+        stage = SceneNum;
         switch (SceneNum)
         {
             case 0: // Main
@@ -49,8 +48,8 @@ public class CGameManager : MonoBehaviour
 
     public void StartStage()
     {
-        LoadScene(stage);
-        Debug.Log(stage + "씬 시작");
+        LoadScene(stage+1);
+        Debug.Log(stage+1 + "씬 시작");
     }
 
 }

@@ -7,7 +7,7 @@ public class CMainManger : MonoBehaviour
 {
     public static CMainManger instance;
 
-    public CMainCameraMovement cameraMovement;
+    public CIntroCameraMovement cameraMovement;
 
     public Transform[] _canvas;
     public GameObject[] _stagePanel;
@@ -22,23 +22,44 @@ public class CMainManger : MonoBehaviour
         instance = this;
     }
 
-    public void CameraMove()
+    void Start()
     {
-        cameraMovement.canMove = true;
+        _langPanel[CGameManager.instance.lang].GetComponent<CLangCanvasClick>().ChangePressed();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            BackMove();
+        }
+    }
+
+    public void BackMove()
+    {
+        if (canvasNum == 0)
+        {
+            Debug.Log("종료");
+            Application.Quit();
+        }
+        else
+        {
+            if (canvasNum == 1) StageStateReset();
+            --canvasNum;
+        }
+
+    }
+
+    public void FrontMove()
+    {
         canvasNum = (canvasNum >= 2) ? 0 : ++canvasNum;
-
-        StageStateReset();
-        LangStateReset();
-        _langPanel[0].GetComponent<CLangCanvasPanelState>().ChangePressed();
-
-        // CSoundManager.instance._effectSource.Play();
     }
 
     public void StageStateReset()
     {
         for (int i = 0; i < _stagePanel.Length; i++)
         {
-            _stagePanel[i].GetComponent<CCanvasPanelState>().ChangeNormal();
+            _stagePanel[i].GetComponent<CStageCanvasClick>().ChangeNormal();
         }
     }
 
@@ -46,13 +67,19 @@ public class CMainManger : MonoBehaviour
     {
         for (int i = 0; i < _langPanel.Length; i++)
         {
-            _langPanel[i].GetComponent<CCanvasPanelState>().ChangeNormal();
+            _langPanel[i].GetComponent<CLangCanvasClick>().ChangeNormal();
         }
+
     }
 
     public void StartGame()
     {
         CGameManager.instance.StartStage();
+    }
+
+    public Vector3 toCanvasPos()
+    {
+        return _canvas[canvasNum].position;
     }
 
 }
