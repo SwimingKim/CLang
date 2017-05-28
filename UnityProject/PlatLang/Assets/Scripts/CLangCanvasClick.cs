@@ -39,10 +39,10 @@ public class CLangCanvasClick : CCanvasClick, ICanvasState
         {
             ChangePressed();
             CSoundManager.instance._effectSource.Play();
+            CGameManager.instance.lang = index;
         }
         else
         {
-            CGameManager.instance.lang = index;
             Debug.Log("언어 = " + index);
             CMainManger.instance.StartGame();
         }

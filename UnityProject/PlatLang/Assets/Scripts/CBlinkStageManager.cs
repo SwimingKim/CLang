@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CBlinkStageManager : CStageManager {
+	
+	// protected override void Awake()
+	// {
+		
+	// }
 
-	protected override void Awake()
-	{
-		base.Awake();
-		Init(1);
-	}
 }

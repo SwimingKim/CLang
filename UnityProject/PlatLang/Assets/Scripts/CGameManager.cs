@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class CGameManager : MonoBehaviour
 {
     public static CGameManager instance = null;
-    [HideInInspector]
     
     public int stage;
     public int lang;
@@ -46,6 +45,8 @@ public class CGameManager : MonoBehaviour
 
     }
 
+    // 메모리 생성 전이면 초기화로 무조건 attack씬에서 시작하므로
+    // MainManager의 함수를 활용할 것
     public void StartStage()
     {
         LoadScene(stage+1);

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CSmashStageManager : CStageManager {
 
-	protected override void Awake()
-	{
-		base.Awake();
-		Init(2);
-	}
+	// protected override void Awake()
+	// {
+	// 	// if (passMain()) 
+	// }
+
 }

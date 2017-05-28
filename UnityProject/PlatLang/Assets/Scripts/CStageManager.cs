@@ -25,19 +25,26 @@ public class CStageManager : MonoBehaviour
 
     protected virtual void Awake()
     {
-        // 바로 메인으로 시작하기 위한 임시 함수
-        int passMain = PlayerPrefs.GetInt("passMain", 0);
-        if (passMain == 0)
+        // GameManager가 없으면 Main으로 가기
+        if (CGameManager.instance == null)
         {
             SceneManager.LoadScene("Main");
-            PlayerPrefs.SetInt("passMain", 1);
         }
-        // Init(0); // 0 : 영어, 1 : 중국어, 2 : 일본어
+        else
+        {
+            Init(CGameManager.instance.lang); // 0 : 영어, 1 : 중국어, 2 : 일본어
+        }
+
+    }
+
+    public void GoAttack()
+    {
+        SceneManager.LoadScene("Attack");
     }
 
     protected void Init(int langMode)
     {
-        Debug.Log("Init");
+        Debug.Log("Lang Init");
 
         // 데이터 세팅 (임시)
         ChooseStudyData(langMode);
@@ -174,14 +181,7 @@ public class CStageManager : MonoBehaviour
     {
         // 임시
         _noOverlaps.Clear();
-        if(CSoundManager.instance != null) CSoundManager.instance._mainSource.Stop();
-    }
-
-    void OnApplicationQuit()
-    {
-        Debug.Log("스테이지 매니저 종료");
-        EasyTTSUtil.Stop();
-        PlayerPrefs.SetInt("passMain", 0);
+        if (CSoundManager.instance != null) CSoundManager.instance._mainSource.Stop();
     }
 
 }

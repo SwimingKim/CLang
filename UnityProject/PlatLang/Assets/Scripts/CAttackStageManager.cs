@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class CAttackStageManager : CStageManager {
 
-	protected override void Awake()
-	{
-		base.Awake();
-		Init(0);
-	}
+	// protected override void Awake()
+	// {
+	// }
 
 }

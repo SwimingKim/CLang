@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CBombStageManager : CStageManager {
 
-	protected override void Awake()
-	{
-		base.Awake();
-		Init(1);
-	}
+	// protected override void Awake()
+	// {
+		
+	// }
+
 }

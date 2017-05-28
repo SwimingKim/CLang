@@ -15,7 +15,6 @@ public class CMainManger : MonoBehaviour
     public Image[] characterImage;
 
     public int canvasNum = 0;
-    public int stageNum = 0;
 
     void Awake()
     {
