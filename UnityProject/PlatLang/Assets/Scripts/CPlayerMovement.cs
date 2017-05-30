@@ -1,32 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CPlayerMovement : MonoBehaviour
 {
+    public float _speed;
     float _touchFos = 5f;
-    Rigidbody2D _rigidBody;
     float h, v;
 
-    public bool _main;
+    bool isJump;
+
+    Rigidbody2D _rigidbody2d;
+    Animator _animator;
+    public SpriteRenderer[] _spriteRender;
 
     void Awake()
     {
-        _rigidBody = GetComponent<Rigidbody2D>();
+        _rigidbody2d = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
-    {
-#if UNITY_EDITOR || UNITY_STANDALONE
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-#elif UNITY_ANDROID || UNITY_IOS
-        Debug.Log("모바일입니다");
-#endif
+    {   
+        // 에디터 상에서 확인
+        if (Input.GetKeyDown(KeyCode.A)) PressKey(1);
+        else if (Input.GetKeyDown(KeyCode.S)) PressKey(2);
+        else if (Input.GetKeyDown(KeyCode.D)) PressKey(3);
+        else if (Input.GetKeyDown(KeyCode.F)) PressKey(4);
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) 
+        || Input.GetKeyDown(KeyCode.D) || Input.GetKeyUp(KeyCode.F)) StopMove();
 
-        Vector2 direction = new Vector2(h, v);
-
-        transform.Translate(direction * 3f * Time.deltaTime);
+        InputMove();
     }
 
     public void PressKey(int nKey)
@@ -40,7 +45,8 @@ public class CPlayerMovement : MonoBehaviour
                 h = 1;
                 break;
             case 3: //up
-                v = 1;
+                // v = 1;
+                InputJump();
                 break;
             case 4: //down
                 v = -1;
@@ -48,10 +54,38 @@ public class CPlayerMovement : MonoBehaviour
         }
     }
 
+    public void InputJump()
+    {
+        if (!isJump)
+        {
+            _animator.SetTrigger("Jump");
+            _rigidbody2d.velocity = new Vector2(_rigidbody2d.velocity.x, 0f);
+            _rigidbody2d.AddForce(Vector2.up * 1300f);
+
+            isJump = true;
+        }
+    }
+
+    public void InputMove()
+    {
+        if (Mathf.Abs(h) > 0)
+        {
+            for (int i = 0; i < _spriteRender.Length; i++)
+            {
+                _spriteRender[i].flipX = (Mathf.Sign(h) == 1) ? true : false;
+            }
+        }
+
+        _rigidbody2d.velocity = new Vector2(h * _speed, _rigidbody2d.velocity.y);
+
+        _animator.SetFloat("Horizontal", h);
+        _animator.SetFloat("Vertical", _rigidbody2d.velocity.y);
+    }
+
     public void StopMove()
     {
         h = v = 0;
-        _rigidBody.velocity = Vector2.zero;
+        _rigidbody2d.velocity = Vector2.zero;
     }
 
     void OnApplicationQuit()
