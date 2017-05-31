@@ -19,10 +19,10 @@ public class CGameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1)) LoadScene(1);
-        if (Input.GetKeyDown(KeyCode.Keypad2)) LoadScene(2);
-        if (Input.GetKeyDown(KeyCode.Keypad3)) LoadScene(3);
-        if (Input.GetKeyDown(KeyCode.Keypad4)) LoadScene(4);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) LoadScene(1);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) LoadScene(2);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) LoadScene(3);
+        if (Input.GetKeyDown(KeyCode.Alpha4)) LoadScene(4);
     }
 
     public void LoadScene(int SceneNum)

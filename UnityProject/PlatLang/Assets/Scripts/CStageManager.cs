@@ -7,6 +7,14 @@ using UnityEngine.SceneManagement;
 // 게임화면에서 스테이지를 관리하는 클래스
 public class CStageManager : MonoBehaviour
 {
+    public GameObject loadingPanel;
+    public bool IsLoading = false;
+    public Text loadingText;
+    int loadingTime = 0;
+
+    public GameObject player;
+    public GameObject eventButton;
+
     public enum LANGTYPE
     {
         ENG, JP, CH
@@ -35,6 +43,32 @@ public class CStageManager : MonoBehaviour
             Init(CGameManager.instance.lang); // 0 : 영어, 1 : 중국어, 2 : 일본어
         }
 
+    }
+
+    protected virtual void Start()
+    {
+        if (IsLoading)
+        {
+            loadingPanel.SetActive(true);
+
+            InvokeRepeating("Loading", 0f, 0.1f);
+        }
+    }
+
+    void Loading()
+    {
+        if (loadingTime >= 100)
+        {
+            CancelInvoke("Loading");
+            IsLoading = false;
+
+            loadingPanel.SetActive(false);
+        }
+        else
+        {
+            loadingTime += 4;
+            loadingText.text = loadingTime+"%";
+        }
     }
 
     public void GoAttack()
@@ -172,10 +206,16 @@ public class CStageManager : MonoBehaviour
         }
     }
 
-    protected void StageSpecialAction()
+    public virtual void InputAction()
     {
 
     }
+
+    public void ShowEventButton()
+    {
+        eventButton.SetActive(true);
+    }
+
 
     void OnDestroy()
     {
