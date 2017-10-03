@@ -6,7 +6,7 @@
 
 - 기본형태
 
-```
+```c
 #include <stdio.h>
 main()
 {
@@ -19,7 +19,7 @@ main()
 
   - 기본 형태  
 
-```
+```cpp
 #include <iostream>  
 using namespace std;  
 int main()  
@@ -30,7 +30,7 @@ int main()
 
   - 조건문  
 
-```
+```cpp
 if (condition)  
 {  
 }
@@ -44,7 +44,7 @@ switch (key)
 
   - 반복문  
 
-```
+```cpp
 for (int i=0; i < length)  
 {  
 }
@@ -60,7 +60,7 @@ do
 
   - 함수
 
-```
+```cpp
 int mfunc(int a, int b)
 {
   return a + b;
@@ -75,7 +75,7 @@ T maxt(T x, T y)
 
 - 포인터
 
-```
+```cpp
 void swap(int* pA, int* pB)
 {
   int temp = *pA;
@@ -97,7 +97,7 @@ cout << "pA = " << pA << " &a = " << &a << "\n";
 
 - 레퍼런스
 
-```
+```cpp
 void swap(int& rA, int& rB)
 {
   int temp = rA;
@@ -118,7 +118,7 @@ cout << "&rA = " << &rA << " &a = " << &a << "\n";
 
 - 배열
 
-```
+```cpp
 int list[5] = {1,2,3,4,5};
 char str[6] = "Hello";
 cout << str; // Hello
@@ -128,7 +128,7 @@ cout << pstr; // World;
 
 - 열거체, 구조체, 공용체
 
-```
+```cpp
 enum Week = {SUN, MON, TUE, WED, THU, FRI, SAT, SUN};
 
 struct Car
@@ -146,7 +146,7 @@ union Markdet
 
 - 클래스
 
-```
+```cpp
 class Car
 {
   private:
@@ -177,7 +177,7 @@ void Car::setColorGas(string c, int g)
 
 - 기본자료형
 
-```
+```csharp
 int, long, float, double
 char, string
 bool
@@ -188,14 +188,14 @@ Int.Parse("123");
 
 - 입력과 출력
 
-```
+```csharp
 Console.WriteLine("테스트입니다");
 var user = Console.ReadLine();
 ```
 
 - 조건문
 
-```
+```csharp
 if (true)
 {
 
@@ -222,7 +222,7 @@ switche (num)
 
 - 반복문
 
-```
+```csharp
 while(true)
 {
 
@@ -245,7 +245,7 @@ foreach (string item in array)
 
 - 클래스
 
-```
+```csharp
 class Box
 {
   private int width;
@@ -290,7 +290,7 @@ class Box
 
 - 상속
 
-```
+```csharp
 class Parent
 {
   public Parent()
@@ -311,7 +311,7 @@ class Child : Parent
 
 - 하이딩
 
-```
+```csharp
 class Parent
 {
   public void Method() {}
@@ -325,7 +325,7 @@ class Child : Parent
 
 - 오버라이딩
 
-```
+```csharp
 class Parent
 {
   public virtual void Method() {}
@@ -347,7 +347,7 @@ class Child : Parent
 
 - 구조체
 
-```
+```csharp
 struct Point
 {
   public int mp;
@@ -363,7 +363,7 @@ struct Point
 
 - 인터페이스
 
-```
+```csharp
 class Product : IComparable
 {
   public int Price{ get; set; }
@@ -382,7 +382,7 @@ class Product : IComparable
 
 - 델리게이터, 람다
 
-```
+```csharp
 List<Product> products = new List<Product>()
 {
   new Product() {Price = 500},
